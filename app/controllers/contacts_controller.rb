@@ -1,4 +1,12 @@
 class ContactsController < ApplicationController
+
+    # GET /contacts
+  def index
+    @contacts = Contact.all
+    render json: @contacts
+  end
+
+  
     # POST /contacts
     def create
       @contact = Contact.new(contact_params)
